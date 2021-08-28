@@ -1,0 +1,6 @@
+#!/bin/sh
+
+arduino-cli config set board_manager.additional_urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
+arduino-cli core install esp8266:esp8266
+arduino-cli lib install PubSubClient
+printf '#define WIFI_NAME ("'$1'")\n#define WIFI_PASSWORD ("'$2'")' > Settings.h
